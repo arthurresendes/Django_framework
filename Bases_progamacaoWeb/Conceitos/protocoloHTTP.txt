@@ -1,0 +1,16 @@
+Qualquer tipo de navegação já utiliza o HTTP
+
+Um protocolo é um conjunto de regras e convenções que padronizam a comunicação e o comportamento entre sistemas, dispositivos ou pessoas, garantindo que a troca de informações ou a execução de tarefas ocorra de forma organizada, eficiente e compreensível para todas as partes envolvidas, como um "idioma" comum
+
+O protocolo HTTP (Protocolo de tranferencia de hipertexto), se comunicando na porta 80 para HTTP e 443 para HTTPS
+
+A diferença do HTTP para o HTTPS é que o HTTPS é utilizado para segurança, com dados sensiveis já o HTTP é utilizado para o básico, sem dados sensiveis.
+
+
+Verbos HTTP:
+
+GET - Pegar os dados
+POST - Enviar novos os dados
+PUT - Atualizar todos os dados já existente
+PATCH - Atualizar um dados de varios pré-existente
+DELETE - Deletar
