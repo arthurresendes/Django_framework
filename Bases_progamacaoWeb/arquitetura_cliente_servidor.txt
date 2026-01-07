@@ -1,0 +1,7 @@
+Modelo de rede onde clientes solicitam serviços ou dados e servidores os fornecem, comunicando-se via rede usando protocolos como TCP/IP.
+
+Como funciona:
+1 - Um cliente(seu navegador ou app) envia uma solicitação (request) pela rede
+2 - Servidor processa: O servidor recebe a requisição, processa-a busca de dados  e entrega uma resposta
+3 - Servidor responde
+4 - Cliente consome, recebendo a resposta e apresenta ou utiliza para alguma tarefa.
