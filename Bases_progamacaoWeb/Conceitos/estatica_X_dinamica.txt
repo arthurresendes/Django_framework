@@ -1,0 +1,6 @@
+Programação estatica: Não são processadas no servidor (HTML, CSS E JavaScript) 
+
+Programação dinâmica: São processada no servidor (Java, Python, JavaScript, PHP, etc)
+
+
+JavaScript é estatica e dinamica
