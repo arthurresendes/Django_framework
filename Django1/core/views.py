@@ -9,3 +9,9 @@ def index(request):
 
 def contato(request):
     return render(request, 'contato.html')
+
+def tecnologias(request):
+    context={
+        'Tec': 'Python, HTML, CSS, JS e Django'
+    }
+    return render(request, 'tecnologias.html',context)
