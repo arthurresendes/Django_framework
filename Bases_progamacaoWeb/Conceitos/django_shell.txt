@@ -1,0 +1,8 @@
+Exemplo de insercção/salvamento diretamente de um model no banco de dados:
+
+tecnologia = Tecnologia(nomePessoa="Arthur Resende",nomeTec= "TypeScript",tempo=1)
+tecnologia.save()
+
+tecnologia.pk -> Ver a primary key que no caso é o id
+tecnologia.delete() -> Apaga
+tecnologia.nomeTec = "Type Script" e depois tecnologia.save() -> Muda apenas o nomeTec da ultima tecnologia adicionada

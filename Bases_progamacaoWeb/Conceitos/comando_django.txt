@@ -1,0 +1,11 @@
+Iniciar projeto:
+django-admin startproject nome_projeto
+
+Iniciar Pasta com models, migrations,etc
+python manage.py startapp nome_pasta
+
+python manage.py makemigrations -> Faz as migrações que estao no model
+python manage.py migrate -> Sobe migrações pendente da pasta migrations para o db
+
+Criar pasta templates para o HTML dentro da pasta onde tem os models
+Criar views e urls dentro da pasta da pasta onde tem o models para melhor controle
