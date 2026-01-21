@@ -16,3 +16,11 @@ class Cliente(models.Model):
     
     def __str__(self):
         return f"{self.nome} {self.sobrenome}"
+
+class Tecnologia(models.Model):
+    nomePessoa = models.CharField('Pessoa', max_length=150)
+    nomeTec = models.CharField('Tecnologia', max_length=50)
+    tempo = models.IntegerField('Tempo')
+    
+    def __str__(self):
+        return self.nomePessoa
