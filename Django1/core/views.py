@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Produto
+from .models import Produto, Tecnologia
 
 # Create your views here.
 def index(request):
@@ -11,21 +11,24 @@ def index(request):
     else:
         teste = 'Não logado'
     '''
-    
     produtos = Produto.objects.all()
+    tecnologias = Tecnologia.objects.all()
     
     context ={
         'Projeto': 'Meu primeiro projeto django',
-        'produtos': produtos
+        'produtos': produtos,
+        'tecnologias': tecnologias
     }
     return render(request, 'index.html',context)
 
 def contato(request):
     return render(request, 'contato.html')
 
-def tecnologias(request):
+def tecnologias(request,pk):
+    tecno = Tecnologia.objects.get(id=pk)
     context={
-        'Tec': 'Python, HTML, CSS, JS e Django'
+        'Tecnologia': 'Python, HTML, CSS, JS e Django',
+        'tec': tecno
     }
     return render(request, 'tecnologias.html',context)
 

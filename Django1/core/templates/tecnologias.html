@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tecnologias</title>
 </head>
 <body>
     <h1>Tecnologias</h1>
-    <p>{{Tec}}</p>
+    <p>{{Tecnologia}}</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome Pessoa</th>
+                <th>Tecnologia</th>
+                <th>Tempo Meses</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="{% url 'index' %}">{{tec.nomePessoa}}</a></td>
+                <td>{{tec.nomeTec}}</td>
+                <td>{{tec.tempo}}</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
