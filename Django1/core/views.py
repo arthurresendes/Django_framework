@@ -1,28 +1,26 @@
 from django.shortcuts import render
-from .models import Produto, Tecnologia
+from .models import Produto, Tecnologia, Cliente
 
 # Create your views here.
 def index(request):
-    '''
-    print(dir(request.user))
-    if str(request.user) != 'AnonymousUser':
-        teste = f'Logado, usuario: {request.user
-        }'
-    else:
-        teste = 'Não logado'
-    '''
     produtos = Produto.objects.all()
     tecnologias = Tecnologia.objects.all()
+    clientes = Cliente.objects.all()
     
     context ={
         'Projeto': 'Meu primeiro projeto django',
         'produtos': produtos,
-        'tecnologias': tecnologias
+        'tecnologias': tecnologias,
+        'clientes': clientes
     }
     return render(request, 'index.html',context)
 
-def contato(request):
-    return render(request, 'contato.html')
+def cliente(request,pk):
+    cliente = Cliente.objects.get(id=pk)
+    context = {
+        'clie': cliente
+    }
+    return render(request, 'contato.html',context)
 
 def tecnologias(request,pk):
     tecno = Tecnologia.objects.get(id=pk)

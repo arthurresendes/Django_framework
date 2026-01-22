@@ -6,7 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index</h1>
     <h2>{{Projeto}}</h2>
     <h3>Produtos: </h3>
     <table>
@@ -44,19 +43,19 @@
         </tbody>
     </table>
 
-    <h3>Produtos: </h3>
+    <h3>Cliente: </h3>
     <table>
         <thead>
             <tr>
-                <th>Produto</th>
-                <th>Preço</th>
+                <th>Nome</th>
+                <th>Email</th>
             </tr>
         </thead>
         <tbody>
-            {% for produto in produtos %}
+            {% for cliente in clientes %}
             <tr>
-                <td><a href="{% url 'produto' produto.id %}">{{produto.nome}}</a></td>
-                <td>{{produto.preco}}</td>
+                <td><a href="{% url 'cliente' cliente.id %}">{{cliente.nome}}</a></td>
+                <td>{{cliente.email}}</td>
             </tr>
             {% endfor %}
         </tbody>
