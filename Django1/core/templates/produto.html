@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Produto - HTML</title>
 </head>
 <body>
-    <h1>Index</h1>
-    <h2>{{Projeto}}</h2>
     <table>
         <thead>
             <tr>
                 <th>Produto</th>
                 <th>Preço</th>
+                <th>Quantidade</th>
             </tr>
         </thead>
         <tbody>
-            {% for produto in produtos %}
             <tr>
-                <td><a href="{% url 'produto' produto.id %}">{{produto.nome}}</a></td>
+                <td><a href="{% url 'index' %}">{{produto.nome}}</a></td>
                 <td>{{produto.preco}}</td>
+                <td>{{produto.quantidade}}</td>
             </tr>
-            {% endfor %}
         </tbody>
     </table>
 </body>
