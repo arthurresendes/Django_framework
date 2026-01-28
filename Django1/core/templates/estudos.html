@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <h2>Olá aqui é a area de estudo</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Dia estudo</th>
+                <th>Materia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{est.diaEstudo}}</td>
+                <td>{{est.materiaEstudo}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'index' %}">Voltar</a>
+</body>
+</html>

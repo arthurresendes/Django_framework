@@ -63,6 +63,24 @@
         </tbody>
     </table>
 
+    <h3>Estudos: </h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Dia</th>
+                <th>Materia</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudo in estudos %}
+            <tr>
+                <td><a href="{% url 'estudo' estudo.id %}">{{estudo.diaEstudo}}</a></td>
+                <td>{{estudo.materiaEstudo}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
     <img src="{% static 'images/teste_img.png' %}" alt="">
 
     <button onclick="olaMundo()">Clique em mim</button>

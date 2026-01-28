@@ -9,3 +9,6 @@ python manage.py migrate -> Sobe migrações pendente da pasta migrations para o
 
 Criar pasta templates para o HTML dentro da pasta onde tem os models
 Criar views e urls dentro da pasta da pasta onde tem o models para melhor controle
+
+
+python manage.py collectstatic -> Varre a aplicação e move para outro local

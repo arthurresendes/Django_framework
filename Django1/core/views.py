@@ -1,18 +1,20 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
-from .models import Produto, Tecnologia, Cliente
+from .models import Produto, Tecnologia, Cliente,Estudos
 
 # Create your views here.
 def index(request):
     produtos = Produto.objects.all()
     tecnologias = Tecnologia.objects.all()
     clientes = Cliente.objects.all()
+    estudos = Estudos.objects.all()
     
     context ={
         'Projeto': 'Meu primeiro projeto django',
         'produtos': produtos,
         'tecnologias': tecnologias,
-        'clientes': clientes
+        'clientes': clientes,
+        'estudos': estudos
     }
     return render(request, 'index.html',context)
 
@@ -33,9 +35,15 @@ def tecnologias(request,pk):
     return render(request, 'tecnologias.html',context)
 
 def produto(request,pk):
-    #prod = Produto.objects.get(id=pk)
     prod = get_object_or_404(Produto, id=pk)
     context = {
         'produto': prod
     }
     return render(request, 'produto.html',context)
+
+def estudo(request,pk):
+    estud = get_object_or_404(Estudos, id=pk)
+    context = {
+        'est': estud
+    }
+    return render(request, 'estudos.html',context)
