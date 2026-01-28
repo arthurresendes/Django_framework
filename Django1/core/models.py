@@ -29,3 +29,6 @@ class Tecnologia(models.Model):
 class Estudos(models.Model):
     diaEstudo = models.CharField('EstudoDia', max_length=100)
     materiaEstudo = models.CharField('EstudoMateria', max_length=100)
+    
+    def __str__(self):
+        return self.materiaEstudo
