@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from .models import Produto, Tecnologia, Cliente
 
 # Create your views here.
@@ -16,14 +17,15 @@ def index(request):
     return render(request, 'index.html',context)
 
 def cliente(request,pk):
-    cliente = Cliente.objects.get(id=pk)
+    #cliente = Cliente.objects.get(id=pk)
+    cliente = get_object_or_404(Cliente, id=pk)
     context = {
         'clie': cliente
     }
     return render(request, 'contato.html',context)
 
 def tecnologias(request,pk):
-    tecno = Tecnologia.objects.get(id=pk)
+    tecno = get_object_or_404(Tecnologia,id=pk)
     context={
         'Tecnologia': 'Python, HTML, CSS, JS e Django',
         'tec': tecno
@@ -31,7 +33,8 @@ def tecnologias(request,pk):
     return render(request, 'tecnologias.html',context)
 
 def produto(request,pk):
-    prod = Produto.objects.get(id=pk)
+    #prod = Produto.objects.get(id=pk)
+    prod = get_object_or_404(Produto, id=pk)
     context = {
         'produto': prod
     }
