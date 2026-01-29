@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import Estoque
+from django.shortcuts import get_object_or_404
+from django.template import loader
+from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -9,8 +12,17 @@ def index(request):
     return render(request, 'index.html',context)
 
 def estoque(request,pk):
-    stock = Estoque.objects.get(id=pk)
+    stock = get_object_or_404(Estoque, id=pk)
     context = {
         'est': stock
     }
     return render(request, 'estoque.html',context)
+
+
+def error404(request,ex):
+    template = loader.get_template('404.html')
+    return HttpResponse(content=template.render(), content_type='text/html;charset=utf8', status=404)
+
+def error500(request):
+    template = loader.get_template('500.html')
+    return HttpResponse(content=template.render(), content_type='text/html;charset=utf8', status=500)

@@ -22,7 +22,7 @@
             {% for estoque in estoques %}
             <tr>
                 <td><a href="{% url 'estoque' estoque.id %}">{{estoque.nome}}</a></td>
-                <td>{{estoque.preco}}</td>
+                <td>{{estoque.preco}} R$</td>
             </tr>
             {% endfor %}
         </tbody>
