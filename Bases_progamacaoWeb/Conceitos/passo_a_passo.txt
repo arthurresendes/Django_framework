@@ -1,0 +1,5 @@
+Criando projeto:
+    django-admin startproject nome_projeto
+
+Criando app onde tera os templates e static
+    python manage.py startapp nome_pasta
