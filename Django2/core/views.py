@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import ContatoForm
 
 # Create your views here.
 def index(request):
@@ -8,4 +9,9 @@ def produto(request):
     return render(request, 'produto.html')
 
 def contato(request):
-    return render(request, 'contato.html')
+    form = ContatoForm()
+    
+    context = {
+        'form': form
+    }
+    return render(request, 'contato.html', context)
