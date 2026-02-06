@@ -1,6 +1,9 @@
 from django import forms
 from django.core.mail.message import EmailMessage
 from django.conf import settings
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 class ContatoForm(forms.Form):
     nome = forms.CharField(label='Nome')
@@ -14,12 +17,12 @@ class ContatoForm(forms.Form):
         assunto = self.cleaned_data['assunto']
         mensagem = self.cleaned_data['mensagem']
         
-        conteudo = f"Nome: {nome}\nEmail: {email}\nAssunto: {assunto}\nMensagem: {mensagem}"
+        TO_PERSONS = os.environ.get('TO_EMAIL')
         mail = EmailMessage(
-            subject='Email enviado pelo django2',
-            body=conteudo,
+            subject=assunto,
+            body=f'{nome} te enviou a seguinte mensagem:\n{mensagem}',
             from_email=settings.DEFAULT_FROM_EMAIL,
-            to=['arthur.resende.gomes1@gmail.com'],
+            to=[TO_PERSONS],
             headers={'Reply-To': email}
         )
         
