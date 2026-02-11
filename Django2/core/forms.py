@@ -1,6 +1,7 @@
 from django import forms
 from django.core.mail.message import EmailMessage
 from django.conf import settings
+from .models import Produto
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -29,3 +30,7 @@ class ContatoForm(forms.Form):
         mail.send()
 
 
+class ProdutoForm(forms.ModelForm):
+    class Meta:
+        model = Produto
+        fields = ['nome', 'preco', 'quantidade', 'imagem']
