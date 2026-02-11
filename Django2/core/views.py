@@ -10,8 +10,7 @@ def produto(request):
     if request.method == 'POST':
         form = ProdutoForm(request.POST, request.FILES)
         if form.is_valid():
-            prod = form.save(commit=False)
-            print(prod.nome,prod.preco,prod.quantidade,prod.imagem)
+            form.save()
             messages.success(request,"Produto salvo")
             form  = ProdutoForm()
         else:
