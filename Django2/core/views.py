@@ -20,7 +20,7 @@ def produto(request):
                 messages.success(request,"Produto salvo")
                 form  = ProdutoForm()
             else:
-                messages.error(request, "Erro ao enviar e-mail")
+                messages.error(request, "Erro ao cadastrar")
         else:
             form = ProdutoForm()
         context = {
