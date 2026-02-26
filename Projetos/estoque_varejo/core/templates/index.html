@@ -1,34 +1,50 @@
 {% load static %}
 <!DOCTYPE html>
-<center lang="pt-br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Management Stock</title>
 </head>
 <body>
-    <center>
-    <h1>Bem-Vindo ao controle de estoque online</h1>
-    <img src="{% static 'images/estoque_caixas.jpg' %}" alt="">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Bem-Vindo ao controle de estoque online</h1>
+        
+        <div class="text-center mb-5">
+            <img src="{% static 'images/estoque_caixas.jpg' %}" alt="Estoque Caixas" class="img-fluid" style="max-width: 400px; border-radius: 10px;">
+        </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Preco</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for estoque in estoques %}
-            <tr>
-                <td><a href="{% url 'estoque' estoque.id %}">{{estoque.nome}}</a></td>
-                <td>{{estoque.preco}} R$</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    </body>
-    </center>
+        <!-- TABELA COM BOOTSTRAP -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for estoque in estoques %}
+                    <tr>
+                        <td>{{ estoque.nome }}</td>
+                        <td><strong>R$ {{ estoque.preco }}</strong></td>
+                        <td>
+                            <a href="{% url 'estoque' estoque.id %}" class="btn btn-sm btn-info text-white">
+                                Ver Detalhes
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
