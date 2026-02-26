@@ -59,7 +59,7 @@ ROOT_URLCONF = 'estoque_varejo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'core' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,6 +127,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/' # usaado durante desenvolvimento
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # usado durante a produção
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'core' / 'static',  # ou seu caminho correto
+]
 LOGOUT_REDIRECT_URL = 'index'
